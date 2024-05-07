@@ -81,10 +81,10 @@ def welcomepic(pic, user, chatname, id, uname, brightness_factor=1.3):
     background = Image.open("SACHINxSANATANIxMUSIC/assets/wel2.png")
     pfp = Image.open(pic).convert("RGBA")
     pfp = circle(pfp, brightness_factor=brightness_factor) 
-    pfp = pfp.resize((500, 500))
+    pfp = pfp.resize((400, 400))
     draw = ImageDraw.Draw(background)
     font = ImageFont.truetype('SACHINxSANATANIxMUSIC/assets/font.ttf', size=60)
-    welcome_font = ImageFont.truetype('SACHINxSANATANIxMUSIC/assets/font.ttf', size=60)
+    welcome_font = ImageFont.truetype('SACHINxSANATANIxMUSIC/assets/font.ttf', size=50)
     
  #   draw.text((630, 230), f"USERNAME : {uname}", fill=(255, 255, 255), font=font)
    # draw.text((630, 300), f'NAME: {user}', fill=(255, 255, 255), font=font)
@@ -98,7 +98,7 @@ def welcomepic(pic, user, chatname, id, uname, brightness_factor=1.3):
 
 @app.on_message(filters.command("welcome") & ~filters.private)
 async def auto_state(_, message):
-    usage = "**ᴜsᴀɢᴇ:**\n**⦿ /welcome [on|off]**"
+    usage = "**❍ ᴜsᴀɢᴇ:**\n**⦿ /welcome [on|off]**"
     if len(message.command) == 1:
         return await message.reply_text(usage)
     chat_id = message.chat.id
